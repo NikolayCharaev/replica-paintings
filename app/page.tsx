@@ -1,12 +1,19 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from 'next/image';
+import React from 'react';
+import Header from './components/Header';
+import styles from './page.module.css';
+
+import { Container, GlobalStyle } from './_styles/global';
+// import { Header } from './_styles/header';
 
 export default function Home() {
   return (
-   <>
-
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas omnis velit adipisci, veniam, nisi quam repudiandae, hic consequuntur id accusamus expedita culpa beatae officia ut facere in repellat consectetur est?
-   </>
-  )
+    <React.Fragment>
+      <GlobalStyle />
+      <Header/>
+      <Container>
+        
+      </Container>
+    </React.Fragment>
+  );
 }
