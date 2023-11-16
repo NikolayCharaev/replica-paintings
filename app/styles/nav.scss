@@ -1,0 +1,29 @@
+.nav {
+  max-width: 390px;
+  margin-right: 60px;
+  margin-left: auto;
+
+  &__list {
+    list-style: none;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+    li:hover {
+      color: rgba(89, 141, 102, 1);
+    }
+
+    li:active {
+      color: rgba(55, 107, 68, 1);
+    }
+  }
+
+  &__item {
+    transition: all 0.2s ease;
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+}

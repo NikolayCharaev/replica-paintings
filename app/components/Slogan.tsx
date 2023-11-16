@@ -1,32 +1,24 @@
 import React from 'react';
 import Image from 'next/image';
 import birdImage from '/public/sloganBird.png';
-import {
-  SloganWrapper,
-  SloganTitle,
-  SloganDedicated,
-  SloganDescription,
-  SloganContent,
-} from '../_styles/slogan';
-import { Button } from '../_styles/global';
+import '../styles/slogan.scss'
+
+import Button from './Button';
 const Slogan = () => {
   return (
-    <SloganWrapper>
+    <section className='slogan'>
       <Image src={birdImage} width={540} height={620} alt="bird" />
-
-      <SloganContent>
-        <SloganTitle>
-          Реплики картин от <SloganDedicated>Ink. House</SloganDedicated>
-        </SloganTitle>
-        <SloganDescription>
+      <div className='slogan__content'>
+        <h1 className='slogan__title'>
+          Реплики картин от <span>Ink. House</span>
+        </h1>
+        <p className='slogan__description'>
           Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения,
           доступные цены.
-        </SloganDescription>
-
-
+        </p>
         <Button>Продукция</Button>
-      </SloganContent>
-    </SloganWrapper>
+      </div>
+    </section>
   );
 };
 

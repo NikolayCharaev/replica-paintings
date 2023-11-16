@@ -1,0 +1,10 @@
+.header {
+  background-color: #d4e8d9;
+
+  &__list {
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

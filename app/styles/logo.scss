@@ -1,0 +1,23 @@
+// export const LogoWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+// `;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  &__title {
+    color: #598D66;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

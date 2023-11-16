@@ -1,0 +1,42 @@
+// @import url(./variables.scss);
+
+@import './variables.scss';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f4f6f5;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.button {
+  background: transparent;
+  padding: 20px 60px;
+  color:rgba(89, 141, 102, 1);
+  max-width: 227px;
+  cursor: pointer;
+  font-size: 20px;
+
+  border: 1px solid rgba(89, 141, 102, 1);
+}
+
+.title {
+  color: var(--texColor);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+}

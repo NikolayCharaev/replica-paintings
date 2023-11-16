@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { IBasketTypes } from '@/types/basketTypes';
-import { BasketWrapper } from '../_styles/basket';
 
 const Basket = ({ basketCount }: IBasketTypes) => {
   return (

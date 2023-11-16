@@ -1,22 +1,21 @@
 import React from 'react';
 import Logo from './Logo';
 
-import { HeaderWrapper, HeaderList } from '../_styles/header';
-import { Container } from '../_styles/global';
 import Nav from './Nav';
 import Basket from './Basket';
+import '../styles/header.scss';
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <Container>
-        <HeaderList>
+    <header className="header">
+      <div className="container">
+        <div className="header__list">
           <Logo />
-          <Nav/>
-          <Basket/>
-        </HeaderList>
-      </Container>
-    </HeaderWrapper>
+          <Nav />
+          <Basket />
+        </div>
+      </div>
+    </header>
   );
 };
 
