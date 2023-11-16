@@ -10,8 +10,7 @@ export default function Home() {
       <GlobalStyle />
       <Header />
       <Container>
-
-      <Slogan />
+        <Slogan />
       </Container>
     </React.Fragment>
   );

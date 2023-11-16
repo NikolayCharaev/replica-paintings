@@ -1,9 +1,7 @@
-'use client'
+'use client';
 
-import styled from 'styled-components'
-
+import styled from 'styled-components';
 
 export const BasketWrapper = styled.div`
-
-    margin-left: 60px;
-`
+  /* margin-left: 60px; */
+`;

@@ -4,6 +4,7 @@ import { colors } from './variables';
 
 export const NavWrapper = styled.nav`
   max-width: 390px;
+  margin-right: 60px;
 `;
 
 export const NavList = styled.ul`

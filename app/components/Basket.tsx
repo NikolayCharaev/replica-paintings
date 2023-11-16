@@ -5,7 +5,9 @@ import { BasketWrapper } from '../_styles/basket';
 
 const Basket = ({ basketCount }: IBasketTypes) => {
   return (
-    <BasketWrapper>
+    // <BasketWrapper>
+
+    <React.Fragment>
       <svg
         width="24"
         height="24"
@@ -41,7 +43,7 @@ const Basket = ({ basketCount }: IBasketTypes) => {
           </clipPath>
         </defs>
       </svg>
-    </BasketWrapper>
+    </React.Fragment>
   );
 };
 
