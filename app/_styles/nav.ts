@@ -14,21 +14,21 @@ export const NavList = styled.ul`
   align-items: center;
   gap: 60px;
 
-  margin-right: 60px;
-
-  li:hover { 
+  li:hover {
     color: ${colors.textHoverColor};
   }
 
-  li:active{ 
+  li:active {
     color: ${colors.textActiveColor};
   }
+
+ 
 `;
 
 export const NavItem = styled.li`
   color: ${colors.textColor};
-  transition: all .2s ease;
+  transition: all 0.2s ease;
+  font-size: 20px;
 
   cursor: pointer;
- 
 `;

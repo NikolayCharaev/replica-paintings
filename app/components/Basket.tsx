@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { IBasketTypes } from '@/types/basketTypes';
+import { BasketWrapper } from '../_styles/basket';
 
 const Basket = ({basketCount} : IBasketTypes) => {
   return (
-    <div>
+    <BasketWrapper>
       <svg
         width="24"
         height="24"
@@ -40,7 +41,7 @@ const Basket = ({basketCount} : IBasketTypes) => {
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </BasketWrapper>
   );
 };
 
