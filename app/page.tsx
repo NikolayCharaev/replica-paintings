@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './components/Header';
-import Reproductions from './components/reproductions';
+import Reproductions from './components/Reproductions';
+
+
 import Slogan from './components/Slogan';
-import './styles/global.scss';
+import '@/styles/global.scss';
 
 export default function Home() {
   return (
@@ -10,7 +12,7 @@ export default function Home() {
       <Header />
       <div className="container">
         <Slogan />
-        {/* <Reproductions /> */}
+        <Reproductions />
       </div>
     </React.Fragment>
   );

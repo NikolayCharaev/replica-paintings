@@ -3,7 +3,8 @@ import Logo from './Logo';
 
 import Nav from './Nav';
 import Basket from './Basket';
-import '../styles/header.scss';
+import '@/styles/header.scss';
+
 
 const Header = () => {
   return (

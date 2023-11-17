@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '../styles/logo.scss';
+import '@/styles/logo.scss';
 const Logo = () => {
   return (
     <Link href="/">

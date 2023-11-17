@@ -25,16 +25,27 @@ body {
 .button {
   background: transparent;
   padding: 20px 60px;
-  color:rgba(89, 141, 102, 1);
+  color: rgba(89, 141, 102, 1);
   max-width: 227px;
   cursor: pointer;
   font-size: 20px;
 
   border: 1px solid rgba(89, 141, 102, 1);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #598d66;
+    color: rgba(244, 246, 245, 1);
+  }
+
+  &:active {
+    background-color: #376b44;
+  }
 }
 
 .title {
-  color: var(--texColor);
+  color: #2c2d35;
+  font-family: Raleway;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;

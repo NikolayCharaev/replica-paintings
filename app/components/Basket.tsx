@@ -3,7 +3,6 @@ import { IBasketTypes } from '@/types/basketTypes';
 
 const Basket = ({ basketCount }: IBasketTypes) => {
   return (
-    // <BasketWrapper>
 
     <React.Fragment>
       <svg

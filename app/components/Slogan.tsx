@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import birdImage from '/public/sloganBird.png';
-import '../styles/slogan.scss'
+import '@/styles/slogan.scss'
 
 import Button from './Button';
 const Slogan = () => {
@@ -14,7 +14,7 @@ const Slogan = () => {
         </h1>
         <p className='slogan__description'>
           Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения,
-          доступные цены.
+          доступные цены. 
         </p>
         <Button>Продукция</Button>
       </div>
