@@ -1,4 +1,5 @@
 .reproductions {
+  margin-bottom: 70px;
   &__top {
     display: flex;
     justify-content: space-between;
@@ -28,7 +29,50 @@
   }
   .active {
     background: #376b44;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     color: white;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    background: #e1ede6;
+    padding: 20px;
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    .author {
+      margin-bottom: 10px;
+      color: rgba(134, 146, 139, 1);
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .title {
+      color: #2c2d35;
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .size {
+      color: #2c2d35;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    .price {
+      color: #598d66;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
   }
 }

@@ -1,0 +1,27 @@
+.footer {
+  padding: 23px 0;
+  background: #e1ede6;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__phone {
+    margin-top: 41px;
+    a {
+      color: #2c2d35;
+
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #86928b;
+
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

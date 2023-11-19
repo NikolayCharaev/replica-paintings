@@ -5,15 +5,16 @@ import Nav from './Nav';
 import Basket from './Basket';
 import '@/styles/header.scss';
 
-
 const Header = () => {
   return (
     <header className="header">
       <div className="container">
         <div className="header__list">
           <Logo />
-          <Nav />
-          <Basket />
+          <div className="header__left">
+            <Nav />
+            <Basket />
+          </div>
         </div>
       </div>
     </header>

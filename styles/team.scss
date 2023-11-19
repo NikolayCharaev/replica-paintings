@@ -1,0 +1,41 @@
+.team {
+  margin-top: 156px;
+  margin-bottom: 70px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  &__left {
+    position: relative;
+    // overflow: hidden;
+  }
+  &__frame {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__hand {
+    position: absolute;
+    top: -79px;
+    left: 49px;
+    z-index: 12;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__photos {
+    display: flex;
+    gap: 30px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+}

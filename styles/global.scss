@@ -11,10 +11,16 @@
 
 a {
   text-decoration: none;
+
+  color: inherit;
 }
 
 body {
   background-color: #f4f6f5;
+}
+
+ul,ol{ 
+  list-style: none;
 }
 
 .container {
@@ -23,10 +29,10 @@ body {
 }
 
 .button {
+  width: 100%;
   background: transparent;
   padding: 20px 60px;
   color: rgba(89, 141, 102, 1);
-  max-width: 227px;
   cursor: pointer;
   font-size: 20px;
 
@@ -43,6 +49,10 @@ body {
   }
 }
 
+.slogan__button{ 
+  max-width: 227px;
+}
+
 .title {
   color: #2c2d35;
   font-family: Raleway;
@@ -51,3 +61,6 @@ body {
   font-weight: 500;
   line-height: 110%;
 }
+
+
+
