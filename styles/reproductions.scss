@@ -4,12 +4,19 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   &__category {
     display: flex;
     align-items: center;
     gap: 32px;
+
+    overflow: scroll;
   }
 
   .category-button {
@@ -37,6 +44,10 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+
+    @media (max-width: 1110px) {
+      justify-content: center;
+    }
   }
 
   &__card {
@@ -45,6 +56,17 @@
 
     img {
       margin-bottom: 20px;
+
+      @media (max-width: 1110px) {
+        max-width: 200px;
+        max-height: 250px;
+      }
+
+      @media (max-width: 622px) {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
     }
 
     .author {
@@ -52,6 +74,10 @@
       color: rgba(134, 146, 139, 1);
       font-weight: 500;
       font-size: 18px;
+
+      @media (max-width: 1110px) {
+        font-size: 16px;
+      }
     }
 
     .title {
@@ -59,6 +85,10 @@
       font-size: 30px;
       font-weight: 500;
       margin-bottom: 8px;
+
+      @media (max-width: 1110px) {
+        font-size: 24px;
+      }
     }
 
     .size {
@@ -66,6 +96,10 @@
       font-size: 18px;
       font-weight: 500;
       margin-bottom: 30px;
+
+      @media (max-width: 1110px) {
+        font-size: 16px;
+      }
     }
 
     .price {
@@ -73,6 +107,10 @@
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 20px;
+
+      @media (max-width: 1110px) {
+        font-size: 20px;
+      }
     }
   }
 }

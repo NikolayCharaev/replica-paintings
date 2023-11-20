@@ -24,7 +24,7 @@ export default function Home() {
       <Header />
       <div className="container">
         <Slogan />
-        {/* <Reproductions posts={posts} /> */}
+        <Reproductions posts={posts} />
       </div>
       {/* <News/>
       <div className="container">
