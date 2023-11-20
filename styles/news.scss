@@ -5,6 +5,7 @@
   &__wrapper {
     background-image: url(../public/news-bg.jpg);
     background-repeat: no-repeat;
+    background-position: top right;
     background-size: cover;
     min-height: 574px;
     max-width: 1440px;
@@ -14,6 +15,11 @@
   &__content {
 
     padding: 70px 165px;
+
+
+    @media (max-width: 900px) {
+      padding: 50px 33px;
+    }
 
     &-top {
       margin-bottom: 20px;
@@ -25,6 +31,11 @@
       max-width: 420px;
       font-size: 40px;
       font-weight: 500;
+
+
+      @media (max-width: 500px) {
+        font-size: 20px;
+      }
     }
 
     &-text {
@@ -34,6 +45,11 @@
       font-size: 18px;
       font-weight: 500;
       line-height: 150%; /* 27px */
+
+
+      @media (max-width: 900px) {
+        max-width: 100%;
+      } 
     }
 
     &-bottom {

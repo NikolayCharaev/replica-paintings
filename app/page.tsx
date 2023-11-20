@@ -26,8 +26,8 @@ export default function Home() {
         <Slogan />
         <Reproductions posts={posts} />
       </div>
-      {/* <News/>
-      <div className="container">
+     <News/>
+       {/* <div className="container">
         <Team/>
       </div>
       <Footer/>  */}
