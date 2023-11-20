@@ -19,7 +19,8 @@ body {
   background-color: #f4f6f5;
 }
 
-ul,ol{ 
+ul,
+ol {
   list-style: none;
 }
 
@@ -27,14 +28,10 @@ ul,ol{
   max-width: 1110px;
   margin: 0 auto;
 
-
-
   @media (max-width: 800px) {
     padding: 0 40px;
   }
 }
-
-
 
 .button {
   width: 100%;
@@ -55,9 +52,14 @@ ul,ol{
   &:active {
     background-color: #376b44;
   }
+
+
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
 }
 
-.slogan__button{ 
+.slogan__button {
   max-width: 227px;
 }
 
@@ -69,6 +71,3 @@ ul,ol{
   font-weight: 500;
   line-height: 110%;
 }
-
-
-

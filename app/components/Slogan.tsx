@@ -7,7 +7,7 @@ import Button from './Button';
 const Slogan = () => {
   return (
     <section className="slogan">
-      <Image src={birdImage} width={540} height={620} alt="bird" />
+      <Image className='slogan__image' src={birdImage} width={540} height={620} alt="bird" />
       <div className="slogan__content">
         <h1 className="slogan__title">
           Реплики картин от <span>Ink. House</span>

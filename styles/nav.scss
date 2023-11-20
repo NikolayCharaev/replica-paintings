@@ -1,5 +1,6 @@
 .nav {
   max-width: 390px;
+  position: relative;
 
   @media (max-width:800px) {
       font-size: 18px;
@@ -30,8 +31,17 @@
     }
 
     &-mobile  { 
+   
       display: none;
       @media (max-width:530px) {
+        position: absolute;
+        top: 0px;
+        width: 100vw;
+        padding-left: 50px;
+        height: 100vh;
+        padding-top: 50px;
+        background-color: #D4E8D9;
+        left: -60px;
         display: flex;
         flex-direction: column;
         gap: 50px;
