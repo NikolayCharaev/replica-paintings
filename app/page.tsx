@@ -27,10 +27,10 @@ export default function Home() {
         <Reproductions posts={posts} />
       </div>
      <News/>
-       {/* <div className="container">
+       <div className="container">
         <Team/>
       </div>
-      <Footer/>  */}
+      {/* <Footer/>  */}
     </React.Fragment>
   );
 }
