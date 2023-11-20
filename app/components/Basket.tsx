@@ -1,12 +1,10 @@
 import React from 'react';
 import { IBasketTypes } from '@/types/basketTypes';
-
-import '@/styles/basket.scss'
+import '@/styles/basket.scss';
 
 const Basket = ({ basketCount }: IBasketTypes) => {
   return (
-
-    <div className='basket'>
+    <div className="basket">
       <svg
         width="24"
         height="24"

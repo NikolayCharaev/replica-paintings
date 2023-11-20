@@ -7,7 +7,10 @@ import close from '@/public/icons/close.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 const Nav = ({ handleToggleMenu, setMobileMenu, mobileMenu }) => {
   return (
-    <nav className="nav">
+    <motion.nav className="nav"
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+    >
       <div className="mobile__buttons">
         {!mobileMenu ? (
           <Image onClick={handleToggleMenu} src={burger} width={30} height={30} alt="burger-menu" />
@@ -15,37 +18,55 @@ const Nav = ({ handleToggleMenu, setMobileMenu, mobileMenu }) => {
           <Image onClick={handleToggleMenu} src={close} width={30} height={30} alt="close-menu" />
         )}
       </div>
-      <AnimatePresence>
-        {mobileMenu && (
-          <motion.ul
-            className="nav__list"
-            initial={{ x: -300 }}
-            animate={{ x: 0 }}
-            exit={{ x: -300 }}>
-            <li className="nav__item">
-              <AnchorLink offset="100" href="#reproductions">
-                Репродукции
-              </AnchorLink>
-            </li>
-            <li className="nav__item">
-              <AnchorLink offset="100" href="#news">
-                Новинки
-              </AnchorLink>
-            </li>
-            <li className="nav__item">
-              <AnchorLink offset="100" href="#about">
-                О нас
-              </AnchorLink>
-            </li>
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      <ul className="nav__list">
+        <li className="nav__item">
+          <AnchorLink offset="100" href="#reproductions">
+            Репродукции
+          </AnchorLink>
+        </li>
+        <li className="nav__item">
+          <AnchorLink offset="100" href="#news">
+            Новинки
+          </AnchorLink>
+        </li>
+        <li className="nav__item">
+          <AnchorLink offset="100" href="#about">
+            О нас
+          </AnchorLink>
+        </li>
+      </ul>
+
+<AnimatePresence>
+      {mobileMenu && (
+        <motion.ul className="nav__list-mobile"
+        initial={{ opacity: 0,x:-300 }}
+        animate={{ opacity: 1 , x : 0 }}
+        exit={{ opacity: 0 }}
+        >
+          <li className="nav__item">
+            <AnchorLink offset="100" href="#reproductions">
+              Репродукции
+            </AnchorLink>
+          </li>
+          <li className="nav__item">
+            <AnchorLink offset="100" href="#news">
+              Новинки
+            </AnchorLink>
+          </li>
+          <li className="nav__item">
+            <AnchorLink offset="100" href="#about">
+              О нас
+            </AnchorLink>
+          </li>
+        </motion.ul>
+      )}
+</AnimatePresence>
       {/* {mobileMenu && } */}
 
       {/* <ul className="nav__list-mobile">
         asd
       </ul> */}
-    </nav>
+    </motion.nav>
   );
 };
 

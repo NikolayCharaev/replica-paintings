@@ -24,7 +24,7 @@ const Header = () => {
               setMobileMenu={setMobileMenu}
               mobileMenu={mobileMenu}
             />
-            {!mobileMenu && <Basket />}
+            <Basket />
           </div>
         </div>
       </div>
