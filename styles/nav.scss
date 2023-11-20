@@ -40,6 +40,11 @@
 
 
 
-// .mobile__buttons{ 
-//   margin-bottom: 30px;
-// }
+
+.mobile__buttons{ 
+  display: none;
+
+  @media (max-width:530px) {
+    display: block;
+  }
+}
