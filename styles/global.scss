@@ -24,8 +24,14 @@ ul,ol{
 }
 
 .container {
-  width: 1110px;
+  max-width: 1110px;
   margin: 0 auto;
+
+
+
+  @media (max-width: 800px) {
+    padding: 0 40px;
+  }
 }
 
 .button {

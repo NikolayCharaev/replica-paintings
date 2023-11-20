@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <Header />
-      <div className="container">
+      {/* <div className="container">
         <Slogan />
         <Reproductions posts={posts} />
       </div>
@@ -30,7 +30,7 @@ export default function Home() {
       <div className="container">
         <Team/>
       </div>
-      <Footer/>
+      <Footer/> */}
     </React.Fragment>
   );
 }
