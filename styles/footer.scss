@@ -1,11 +1,39 @@
 .footer {
-  padding: 23px 0;
+  padding: 23px 20px;
   background: #e1ede6;
 
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 860px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    @media (max-width: 860px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__link {
+
+    color: #2c2d35;
+    font-size: 20px;
+    font-weight: 500;
+
+
+    @media (max-width: 860px) {
+      font-size: 16px;
+    }
   }
   &__phone {
     margin-top: 41px;

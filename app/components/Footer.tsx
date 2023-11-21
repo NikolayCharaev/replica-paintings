@@ -1,4 +1,5 @@
 import React from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import '@/styles/footer.scss';
 import Logo from './Logo';
@@ -17,10 +18,29 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer__col-two">
-              <Nav/>
+            {/* <Nav/> */}
+            <ul className="footer__nav">
+              <li className="footer__link">
+                <AnchorLink offset="100" href="#reproductions">
+                  Репродукции
+                </AnchorLink>
+              </li>
+
+              <li className="footer__link">
+                <AnchorLink offset="100" href="#news">
+                  Новинки
+                </AnchorLink>
+              </li>
+
+              <li className="footer__link">
+                <AnchorLink offset="100" href="#about">
+                  О нас
+                </AnchorLink>
+              </li>
+            </ul>
           </div>
           <div className="footer__col-three">
-            <Socials/>
+            <Socials />
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function Home() {
        <div className="container">
         <Team/>
       </div>
-      {/* <Footer/>  */}
+      <Footer/> 
     </React.Fragment>
   );
 }
