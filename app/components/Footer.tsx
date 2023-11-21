@@ -1,4 +1,5 @@
 import React from 'react';
+//@ts-ignore
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import '@/styles/footer.scss';
