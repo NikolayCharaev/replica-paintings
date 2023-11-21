@@ -3,7 +3,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import '@/styles/footer.scss';
 import Logo from './Logo';
-import Nav from './Nav';
 import Socials from './Socials';
 const Footer = () => {
   return (

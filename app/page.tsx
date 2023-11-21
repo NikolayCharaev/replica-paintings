@@ -14,7 +14,7 @@ export default function Home() {
   const [posts, setPosts] = useState<[]>([]);
 
   useEffect(() => {
-    getPosts().then((data) => {
+    getPosts().then((data: any) => {
       setPosts(data);
     });
   }, []);
@@ -26,11 +26,11 @@ export default function Home() {
         <Slogan />
         <Reproductions posts={posts} />
       </div>
-     <News/>
-       <div className="container">
-        <Team/>
+      <News />
+      <div className="container">
+        <Team />
       </div>
-      <Footer/> 
+      <Footer />
     </React.Fragment>
   );
 }

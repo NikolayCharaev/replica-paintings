@@ -5,12 +5,12 @@ import Image from 'next/image';
 import burger from '@/public/icons/List.svg';
 import close from '@/public/icons/close.svg';
 import { motion, AnimatePresence } from 'framer-motion';
-const Nav = ({ handleToggleMenu, setMobileMenu, mobileMenu }) => {
+
+import { INavProps } from '@/types/navTypes';
+
+const Nav = ({ handleToggleMenu, mobileMenu }: INavProps) => {
   return (
-    <motion.nav className="nav"
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-    >
+    <motion.nav className="nav" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <div className="mobile__buttons">
         {!mobileMenu ? (
           <Image onClick={handleToggleMenu} src={burger} width={30} height={30} alt="burger-menu" />
@@ -36,36 +36,31 @@ const Nav = ({ handleToggleMenu, setMobileMenu, mobileMenu }) => {
         </li>
       </ul>
 
-<AnimatePresence>
-      {mobileMenu && (
-        <motion.ul className="nav__list-mobile"
-        initial={{ opacity: 0,x:-300 }}
-        animate={{ opacity: 1 , x : 0 }}
-        exit={{ opacity: 0 }}
-        >
-          <li className="nav__item">
-            <AnchorLink offset="100" href="#reproductions">
-              Репродукции
-            </AnchorLink>
-          </li>
-          <li className="nav__item">
-            <AnchorLink offset="100" href="#news">
-              Новинки
-            </AnchorLink>
-          </li>
-          <li className="nav__item">
-            <AnchorLink offset="100" href="#about">
-              О нас
-            </AnchorLink>
-          </li>
-        </motion.ul>
-      )}
-</AnimatePresence>
-      {/* {mobileMenu && } */}
-
-      {/* <ul className="nav__list-mobile">
-        asd
-      </ul> */}
+      <AnimatePresence>
+        {mobileMenu && (
+          <motion.ul
+            className="nav__list-mobile"
+            initial={{ opacity: 0, x: -300 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0 }}>
+            <li className="nav__item">
+              <AnchorLink offset="100" href="#reproductions">
+                Репродукции
+              </AnchorLink>
+            </li>
+            <li className="nav__item">
+              <AnchorLink offset="100" href="#news">
+                Новинки
+              </AnchorLink>
+            </li>
+            <li className="nav__item">
+              <AnchorLink offset="100" href="#about">
+                О нас
+              </AnchorLink>
+            </li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

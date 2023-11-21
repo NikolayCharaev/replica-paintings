@@ -21,7 +21,7 @@ const Header = () => {
           <div className="header__left">
             <Nav
               handleToggleMenu={handleToggleMenu}
-              setMobileMenu={setMobileMenu}
+              // setMobileMenu={setMobileMenu}
               mobileMenu={mobileMenu}
             />
             <Basket />

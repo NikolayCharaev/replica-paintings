@@ -11,15 +11,17 @@ const TeamPhotos = () => {
     });
   }, []);
 
-  return <div className='team__photos'>{
-      photos.map(elem => { 
+  return (
+    <div className="team__photos">
+      {photos.map((elem: any) => {
         return (
           <>
-            <Image src={elem.images} width={80} height={80} alt='photo' />
+            <Image src={elem.images} width={80} height={80} alt="photo" />
           </>
-        )
-      })
-    }</div>;
+        );
+      })}
+    </div>
+  );
 };
 
 export default TeamPhotos;

@@ -1,25 +1,26 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Title from './Title';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import '@/styles/reproductions.scss';
 import ReproductionsList from './ReproductionsList';
+import { IPostsProps } from '@/types/postsTypes';
 
-const Reproductions = ({ posts }) => {
+const Reproductions = ({ posts }: any) => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
 
   function sortCategory(category: string = 'Франция') {
     switch (category) {
       case 'Франция':
-        setCategoryPost(posts.filter((elem) => elem.country === 'Франция'));
+        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Франция'));
         break;
       case 'Англия':
-        setCategoryPost(posts.filter((elem) => elem.country === 'Англия'));
+        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Англия'));
         break;
       case 'Германия':
-        setCategoryPost(posts.filter((elem) => elem.country === 'Германия'));
+        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Германия'));
         break;
       default:
         setCategoryPost([]);
@@ -32,10 +33,13 @@ const Reproductions = ({ posts }) => {
   }, [posts.length, activeButton]);
 
   return (
-    <div className="reproductions" id='reproductions'>
+    <div className="reproductions" id="reproductions">
       <div className="reproductions__top">
         <Title>Репродукции</Title>
-        <div className="reproductions__category">
+        <motion.div
+          className="reproductions__category"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}>
           <button
             onClick={() => {
               setActiveButton('Франция');
@@ -57,7 +61,7 @@ const Reproductions = ({ posts }) => {
             className={`category-button ${activeButton === 'Англия' ? 'active' : ''}`}>
             Англия
           </button>
-        </div>
+        </motion.div>
       </div>
       <ReproductionsList posts={categoryPost} />
     </div>

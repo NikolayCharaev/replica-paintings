@@ -1,14 +1,16 @@
-import React from 'react'
+import React from 'react';
 
+import { motion } from 'framer-motion';
+type TitleProps = {
+  children: string;
+};
 
-type TitleProps = { 
-    children : string
-}
-
-const Title = ({children} : TitleProps) => {
+const Title = ({ children }: TitleProps) => {
   return (
-    <h1 className='title'>{children}</h1>
-  )
-}
+    <motion.h1 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="title">
+      {children}
+    </motion.h1>
+  );
+};
 
-export default Title
+export default Title;
