@@ -1,5 +1,7 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
+
+//@ts-ignore
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
