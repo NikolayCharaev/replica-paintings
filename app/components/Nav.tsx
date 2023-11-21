@@ -5,8 +5,8 @@ import '@/styles/nav.scss';
 //@ts-ignore
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Image from 'next/image';
-import burger from '@/public/icons/List.svg';
-import close from '@/public/icons/close.svg';
+import burger from '/public/icons/List.svg';
+import close from '/public/icons/close.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { INavProps } from '@/types/navTypes';

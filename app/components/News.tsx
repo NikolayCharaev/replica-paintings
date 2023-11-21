@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import newsStar from '@/public/news-star.svg';
+import newsStar from '/public/news-star.svg';
 import '@/styles/news.scss';
 const News = () => {
   return (

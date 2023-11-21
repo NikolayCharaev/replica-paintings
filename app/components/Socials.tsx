@@ -1,7 +1,4 @@
 import React from 'react';
-import facebook from '@/public/socials/facebook.svg';
-import instagram from '@/public/socials/instagram.svg';
-import youtube from '@/public/socials/youtube.svg';
 import '@/styles/socials.scss';
 
 import Link from 'next/link';

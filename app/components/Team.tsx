@@ -4,8 +4,8 @@ import '@/styles/team.scss';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import frame from '@/public/frame.png';
-import hand from '@/public/hand.png';
+import frame from '/public/frame.png';
+import hand from '/public/hand.png';
 import TeamPhotos from './TeamPhotos';
 import Title from './Title';
 const Team = () => {
