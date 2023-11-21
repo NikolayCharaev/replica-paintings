@@ -2,7 +2,6 @@ import React from 'react';
 
 import '@/styles/team.scss';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import frame from '/public/frame.png';
 import hand from '/public/hand.png';
