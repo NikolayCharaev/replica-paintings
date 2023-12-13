@@ -1,6 +1,5 @@
 import type { NextAuthOptions } from 'next-auth'; // импортируем типы для аутентификации
 import GoogleProvider from 'next-auth/providers/google';
-import CredentialsProvider from 'next-auth/providers/credentials';
 import User from '@/models/User';
 import { connectDB } from '@/lib/database';
 
