@@ -1,4 +1,5 @@
 export interface IButtonProps { 
     children : string,
-    onClick?: () => void
+    onClick?: () => void,
+    disabled?: boolean
 }

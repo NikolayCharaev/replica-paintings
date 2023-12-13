@@ -1,9 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from './Button';
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { IPostsProps } from '@/types/postsTypes';
+
+
+
+import {useSession} from 'next-auth/react'
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -25,7 +28,25 @@ const item = {
   },
 };
 
-const ReproductionsList = ({ posts } : any) => {
+
+async function postProduction (elem : IPostsProps) { 
+  const response = await fetch('/api/paintings', { 
+      method : "POST",
+      body: JSON.stringify( { 
+        author : elem.author,
+        imageUrl : elem.images,
+        title : elem.paintingName,
+        size : elem.paintingSize,
+        price : elem.paintingPrice
+      })
+    })
+
+}
+
+const ReproductionsList = ({ posts }: any) => {
+
+
+  const {data : session} = useSession()
   return (
     <AnimatePresence>
       <motion.div
@@ -33,8 +54,8 @@ const ReproductionsList = ({ posts } : any) => {
         variants={container}
         initial="hidden"
         animate="visible">
-        {posts.map((elem : IPostsProps) => {
-          const { _id, country, author, images, paintingName, paintingPrice, paintingSize } = elem;
+        {posts.map((elem: IPostsProps) => {
+          const { _id, author, images, paintingName, paintingPrice, paintingSize } = elem;
           return (
             <motion.div className="reproductions__card" key={_id} variants={item}>
               <Image src={images} alt="poster" width={310} height={422} />
@@ -45,7 +66,7 @@ const ReproductionsList = ({ posts } : any) => {
                 {paintingPrice.slice(0, 2) + ' ' + paintingPrice.slice(2)} руб
               </p>
 
-              <Button>В корзину</Button>
+              <Button disabled={!session ? true : false} onClick={() => postProduction(elem)}>В корзину</Button>
             </motion.div>
           );
         })}

@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Logo from './Logo';
-
 import Nav from './Nav';
 import Basket from './Basket';
 import '@/styles/header.scss';
@@ -19,11 +18,7 @@ const Header = () => {
           <Logo />
           <span className="header__border" />
           <div className="header__left">
-            <Nav
-              handleToggleMenu={handleToggleMenu}
-              // setMobileMenu={setMobileMenu}
-              mobileMenu={mobileMenu}
-            />
+            <Nav handleToggleMenu={handleToggleMenu} mobileMenu={mobileMenu} />
             <Basket />
           </div>
         </div>

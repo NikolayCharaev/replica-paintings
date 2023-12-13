@@ -4,11 +4,13 @@ import Header from './components/Header';
 import Reproductions from './components/Reproductions';
 
 import { getPosts } from '@/lib/getPosts';
+
 import Slogan from './components/Slogan';
 import '@/styles/global.scss';
 import News from './components/News';
 import Team from './components/Team';
 import Footer from './components/Footer';
+import Provider from './components/Provider';
 
 export default function Home() {
   const [posts, setPosts] = useState<[]>([]);
@@ -20,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <React.Fragment>
+    <Provider>
       <Header />
       <div className="container">
         <Slogan />
@@ -31,6 +33,6 @@ export default function Home() {
         <Team />
       </div>
       <Footer />
-    </React.Fragment>
+    </Provider>
   );
 }
