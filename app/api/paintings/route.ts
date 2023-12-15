@@ -26,7 +26,7 @@ export const POST = async (req: any, res: any) => {
   }
 };
 
-export const GET = async (req, res) => {
+export const GET = async (req : any, res : any) => {
   try {
     const allPosts = await Repair.find({});
 

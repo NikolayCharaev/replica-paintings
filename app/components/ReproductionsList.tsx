@@ -23,7 +23,10 @@ const ReproductionsList = ({ posts, basketPosts, setBasketPosts }: any) => {
           title: elem.paintingName,
           size: elem.paintingSize,
           price: elem.paintingPrice,
-          user: session.user.id,
+
+
+          //@ts-ignore
+          user: session?.user?.id,
         }),
       });
       const newBasketItems = await getBasketItems();

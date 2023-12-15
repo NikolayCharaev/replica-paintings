@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 
-const Header = ({ basketPosts }) => {
+const Header = ({ basketPosts } : any) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   const { data: session } = useSession();
 
@@ -34,7 +34,7 @@ const Header = ({ basketPosts }) => {
                 <>
                   <Image
                     className="session__img"
-                    src={session?.user?.image}
+                    src={session?.user?.image || ''}
                     width={40}
                     height={40}
                     alt="image"

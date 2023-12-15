@@ -4,7 +4,6 @@ import Header from '../components/Header'
 const Basket = () => {
   return (
     <div>
-            <Header/>
     </div>
   )
 }

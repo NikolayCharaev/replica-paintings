@@ -1,4 +1,4 @@
-import { models, model, Schema, mongoose } from 'mongoose';
+import mongoose, { models, model, Schema,  } from 'mongoose';
 
 const RepairSchema = new Schema({
   author: {
