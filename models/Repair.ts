@@ -1,4 +1,4 @@
-import { models, model, Schema } from 'mongoose';
+import { models, model, Schema, mongoose } from 'mongoose';
 
 const RepairSchema = new Schema({
   author: {
@@ -16,8 +16,13 @@ const RepairSchema = new Schema({
   imageUrl: {
     type: String,
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 });
 
-const Post = models.Post || model('Post', RepairSchema);
+const Repair = models.Repair || model('Repair', RepairSchema);
 
-export default Post;
+export default Repair;

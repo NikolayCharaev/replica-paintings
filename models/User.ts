@@ -1,4 +1,5 @@
 import mongoose, { Schema, models, model } from 'mongoose';
+
 const UserShema = new Schema({
   email: {
     type: String,

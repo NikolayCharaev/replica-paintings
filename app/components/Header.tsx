@@ -2,12 +2,15 @@
 import { useState } from 'react';
 import Logo from './Logo';
 import Nav from './Nav';
-import Basket from './Basket';
+import Basket from './BasketIcon';
 import '@/styles/header.scss';
+import Image from 'next/image';
 
-const Header = () => {
+import { useSession, signIn, signOut } from 'next-auth/react';
+
+const Header = ({ basketPosts }) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
-
+  const { data: session } = useSession();
   function handleToggleMenu() {
     return setMobileMenu(!mobileMenu);
   }
@@ -19,7 +22,29 @@ const Header = () => {
           <span className="header__border" />
           <div className="header__left">
             <Nav handleToggleMenu={handleToggleMenu} mobileMenu={mobileMenu} />
-            <Basket />
+            {session && <Basket basketCount={basketPosts.length} />}
+
+            <div className="profile">
+              {session ? (
+                <>
+                  <Image
+                    className="session__img"
+                    src={session?.user?.image}
+                    width={40}
+                    height={40}
+                    alt="image"
+                  />
+
+                  <button className="sign-btn" onClick={() => signOut()}>
+                    выйти
+                  </button>
+                </>
+              ) : (
+                <button className="sign-btn" onClick={() => signIn()}>
+                  войти
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

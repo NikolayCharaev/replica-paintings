@@ -7,7 +7,7 @@ import '@/styles/reproductions.scss';
 import ReproductionsList from './ReproductionsList';
 import { IPostsProps } from '@/types/postsTypes';
 
-const Reproductions = ({ posts }: any) => {
+const Reproductions = ({ posts,basketPosts, setBasketPosts }: any) => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
 
@@ -63,7 +63,7 @@ const Reproductions = ({ posts }: any) => {
           </button>
         </motion.div>
       </div>
-      <ReproductionsList posts={categoryPost} />
+      <ReproductionsList posts={categoryPost} basketPosts={basketPosts} setBasketPosts={setBasketPosts}  />
     </div>
   );
 };

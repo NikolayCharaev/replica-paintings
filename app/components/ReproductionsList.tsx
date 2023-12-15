@@ -4,49 +4,35 @@ import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IPostsProps } from '@/types/postsTypes';
 
+import { useSession } from 'next-auth/react';
+import { container, item } from '@/animation/repairAnimation';
+import { getBasketItems } from '@/lib/basket';
 
+const ReproductionsList = ({ posts, basketPosts, setBasketPosts }: any) => {
+  const { data: session } = useSession();
 
-import {useSession} from 'next-auth/react'
+  console.log(session);
 
-const container = {
-  hidden: { opacity: 1, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2,
-    },
-  },
-};
+  async function postProduction(elem: IPostsProps) {
+    try {
+      await fetch('/api/paintings', {
+        method: 'POST',
+        body: JSON.stringify({
+          author: elem.author,
+          imageUrl: elem.images,
+          title: elem.paintingName,
+          size: elem.paintingSize,
+          price: elem.paintingPrice,
+          user: session.user.id,
+        }),
+      });
+      const newBasketItems = await getBasketItems();
+      setBasketPosts(newBasketItems);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
-};
-
-
-async function postProduction (elem : IPostsProps) { 
-  const response = await fetch('/api/paintings', { 
-      method : "POST",
-      body: JSON.stringify( { 
-        author : elem.author,
-        imageUrl : elem.images,
-        title : elem.paintingName,
-        size : elem.paintingSize,
-        price : elem.paintingPrice
-      })
-    })
-
-}
-
-const ReproductionsList = ({ posts }: any) => {
-
-
-  const {data : session} = useSession()
   return (
     <AnimatePresence>
       <motion.div
@@ -66,7 +52,13 @@ const ReproductionsList = ({ posts }: any) => {
                 {paintingPrice.slice(0, 2) + ' ' + paintingPrice.slice(2)} руб
               </p>
 
-              <Button disabled={!session ? true : false} onClick={() => postProduction(elem)}>В корзину</Button>
+              <Button
+                disabled={!session ? true : false}
+                onClick={() => {
+                  postProduction(elem);
+                }}>
+                В корзину
+              </Button>
             </motion.div>
           );
         })}

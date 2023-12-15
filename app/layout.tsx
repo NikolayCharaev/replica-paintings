@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
+import Provider from './components/Provider';
 const raleway = Raleway({ subsets: ['latin'], weight: '500' });
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
-      <body className={raleway.className}>{children}</body>
+      <body className={raleway.className}><Provider>{children}</Provider></body>
     </html>
   );
 }
