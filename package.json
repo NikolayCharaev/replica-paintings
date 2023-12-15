@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.0.1",
     "framer-motion": "^10.16.5",
     "mongodb": "^6.3.0",

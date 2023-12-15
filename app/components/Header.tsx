@@ -8,18 +8,19 @@ import Image from 'next/image';
 
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+
 const Header = ({ basketPosts }) => {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   const { data: session } = useSession();
+
+
   function handleToggleMenu() {
     return setMobileMenu(!mobileMenu);
   }
 
-
-
-  
   return (
     <header className="header">
+    
       <div className="container">
         <div className="header__list">
           <Logo />

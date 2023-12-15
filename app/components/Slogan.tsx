@@ -5,16 +5,13 @@ import '@/styles/slogan.scss';
 
 import { motion } from 'framer-motion';
 
-
 //@ts-ignore
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 import Button from './Button';
 const Slogan = () => {
-
   return (
     <section className="slogan">
-
       <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }}>
         <Image className="slogan__image" src={birdImage} width={540} height={620} alt="bird" />
       </motion.div>
