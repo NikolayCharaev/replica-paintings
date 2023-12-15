@@ -14,6 +14,10 @@ const Header = ({ basketPosts }) => {
   function handleToggleMenu() {
     return setMobileMenu(!mobileMenu);
   }
+
+
+
+  
   return (
     <header className="header">
       <div className="container">
