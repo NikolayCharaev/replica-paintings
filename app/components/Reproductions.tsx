@@ -2,25 +2,30 @@
 import { useState, useEffect } from 'react';
 import Title from './Title';
 import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
 import '@/styles/reproductions.scss';
 import ReproductionsList from './ReproductionsList';
 import { IPostsProps } from '@/types/postsTypes';
 
-const Reproductions = ({ posts,basketPosts, setBasketPosts }: any) => {
+import Spinner from './Spinner';
+
+const Reproductions = ({ basketPosts, setBasketPosts }: any) => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
+
+  const { replications, replicationsLoading } = useSelector((state) => state.reproductionsSlice);
 
   function sortCategory(category: string = 'Франция') {
     switch (category) {
       case 'Франция':
-        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Франция'));
+        setCategoryPost(replications.filter((elem: IPostsProps) => elem.country === 'Франция'));
         break;
       case 'Англия':
-        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Англия'));
+        setCategoryPost(replications.filter((elem: IPostsProps) => elem.country === 'Англия'));
         break;
       case 'Германия':
-        setCategoryPost(posts.filter((elem: IPostsProps) => elem.country === 'Германия'));
+        setCategoryPost(replications.filter((elem: IPostsProps) => elem.country === 'Германия'));
         break;
       default:
         setCategoryPost([]);
@@ -30,7 +35,7 @@ const Reproductions = ({ posts,basketPosts, setBasketPosts }: any) => {
 
   useEffect(() => {
     sortCategory(activeButton);
-  }, [posts.length, activeButton]);
+  }, [replications.length, activeButton]);
 
   return (
     <div className="reproductions" id="reproductions">
@@ -63,7 +68,16 @@ const Reproductions = ({ posts,basketPosts, setBasketPosts }: any) => {
           </button>
         </motion.div>
       </div>
-      <ReproductionsList posts={categoryPost} basketPosts={basketPosts} setBasketPosts={setBasketPosts}  />
+
+      {replicationsLoading === 'pending' ? (
+        <Spinner status={'pending'} />
+      ) : (
+        <ReproductionsList
+          posts={categoryPost}
+          basketPosts={basketPosts}
+          setBasketPosts={setBasketPosts}
+        />
+      )}
     </div>
   );
 };

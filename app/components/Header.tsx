@@ -27,7 +27,7 @@ const Header = ({ basketPosts } : any) => {
           <span className="header__border" />
           <div className="header__left">
             <Nav handleToggleMenu={handleToggleMenu} mobileMenu={mobileMenu} />
-            {session && <Basket basketCount={basketPosts.length} />}
+            {session && <Basket  />}
 
             <div className="profile">
               {session ? (

@@ -1,12 +1,14 @@
 'use client';
 
 import { configureStore } from '@reduxjs/toolkit';
+import basketSlice from './slices/basket/basketSlice';
 import reproductionsSlice from './slices/reproductions/reproductionsSlice';
 
 export const store = () => {
   return configureStore({
     reducer: {
       reproductionsSlice: reproductionsSlice,
+      baksetSlice: basketSlice,
     },
   });
 };

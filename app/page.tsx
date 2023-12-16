@@ -3,8 +3,6 @@ import React, { useEffect, useState, Fragment } from 'react';
 import Header from './components/Header';
 import Reproductions from './components/Reproductions';
 
-import { getPosts } from '@/lib/getPosts';
-
 import Slogan from './components/Slogan';
 import '@/styles/global.scss';
 import News from './components/News';
@@ -12,30 +10,26 @@ import Team from './components/Team';
 import Footer from './components/Footer';
 
 import { getBasketItems } from '@/lib/basket';
+import { fetchReplications } from '@/redux/slices/reproductions/reproductionsSlice';
+import { fetchBacket } from '@/redux/slices/basket/basketSlice';
+
+import { useDispatch } from 'react-redux';
 
 export default function Home() {
-  const [posts, setPosts] = useState<[]>([]);
   const [basketPosts, setBasketPosts] = useState<[]>([]);
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    getPosts().then((data: any) => {
-      setPosts(data);
-    });
-    getBasketItems()
-      .then((data) => setBasketPosts(data))
-      .catch((err) => console.log(err));
+    dispatch(fetchReplications());
+    dispatch(fetchBacket());
   }, []);
 
   return (
     <Fragment>
-      <Header basketPosts={basketPosts} />
+      <Header  />
       <div className="container">
         <Slogan />
-        <Reproductions
-          getBasketItems={getBasketItems}
-          posts={posts}
-          setBasketPosts={setBasketPosts}
-        />
+        <Reproductions getBasketItems={getBasketItems} setBasketPosts={setBasketPosts} />
       </div>
       <News />
       <div className="container">
