@@ -14,7 +14,7 @@ const Reproductions = ({ basketPosts, setBasketPosts }: any) => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
 
-  const { replications, replicationsLoading } = useSelector((state) => state.reproductionsSlice);
+  const { replications, replicationsLoading } = useSelector((state : any) => state.reproductionsSlice);
 
   function sortCategory(category: string = 'Франция') {
     switch (category) {

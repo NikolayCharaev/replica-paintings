@@ -20,7 +20,9 @@ export default function Home() {
 
   const dispatch = useDispatch();
   useEffect(() => {
+    //@ts-ignore
     dispatch(fetchReplications());
+        //@ts-ignore
     dispatch(fetchBacket());
   }, []);
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import '@/styles/spinner.scss';
 
-const Spinner = ({ status }) => {
+interface IStatusProps { 
+  status : string
+}
+const Spinner = ({ status } :IStatusProps) => {
   return (
     <>
       {status === 'pending' && (
