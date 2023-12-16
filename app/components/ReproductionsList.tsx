@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { IPostsProps } from '@/types/postsTypes';
 
 import { useSession } from 'next-auth/react';
+import {useDispatch} from 'react-redux'
 import { container, item } from '@/animation/repairAnimation';
-import { getBasketItems } from '@/lib/basket';
+import { fetchBacket } from '@/redux/slices/basket/basketSlice';
 
-const ReproductionsList = ({ posts, basketPosts, setBasketPosts }: any) => {
+const ReproductionsList = ({ posts }: any) => {
   const { data: session } = useSession();
 
-  console.log(session);
-
+  const dispatch = useDispatch()
   async function postProduction(elem: IPostsProps) {
     try {
       await fetch('/api/paintings', {
@@ -29,8 +29,9 @@ const ReproductionsList = ({ posts, basketPosts, setBasketPosts }: any) => {
           user: session?.user?.id,
         }),
       });
-      const newBasketItems = await getBasketItems();
-      setBasketPosts(newBasketItems);
+      // const newBasketItems = await getBasketItems();
+      // setBasketPosts(newBasketItems);
+      dispatch(fetchBacket())
     } catch (err) {
       console.log(err);
     }

@@ -12,6 +12,11 @@
 
   &__counter {
     position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: -10px;
     right: -20px;
     z-index: 10;
@@ -19,7 +24,6 @@
 
     background: #598d66;
     border-radius: 100%;
-    padding: 10px;
     cursor: pointer;
     font-size: 12px;
     font-weight: bold;

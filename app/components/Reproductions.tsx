@@ -14,7 +14,9 @@ const Reproductions = ({ basketPosts, setBasketPosts }: any) => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
 
-  const { replications, replicationsLoading } = useSelector((state : any) => state.reproductionsSlice);
+  const { replications, replicationsLoading } = useSelector(
+    (state: any) => state.reproductionsSlice,
+  );
 
   function sortCategory(category: string = 'Франция') {
     switch (category) {
@@ -72,11 +74,7 @@ const Reproductions = ({ basketPosts, setBasketPosts }: any) => {
       {replicationsLoading === 'pending' ? (
         <Spinner status={'pending'} />
       ) : (
-        <ReproductionsList
-          posts={categoryPost}
-          basketPosts={basketPosts}
-          setBasketPosts={setBasketPosts}
-        />
+        <ReproductionsList posts={categoryPost} />
       )}
     </div>
   );
