@@ -14,9 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
       <body className={raleway.className}>
-        <ReduxProvider>
-          <Provider>{children}</Provider>
-        </ReduxProvider>
+        <Provider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </Provider>
       </body>
     </html>
   );
