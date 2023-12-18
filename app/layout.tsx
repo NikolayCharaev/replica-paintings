@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google';
 import Provider from './components/Provider';
 
 import ReduxProvider from '../redux/provider';
+import Header from './components/Header';
 
 const raleway = Raleway({ subsets: ['latin'], weight: '500' });
 export const metadata: Metadata = {
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru">
       <body className={raleway.className}>
         <Provider>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            <Header />
+            {children}
+          </ReduxProvider>
         </Provider>
       </body>
     </html>

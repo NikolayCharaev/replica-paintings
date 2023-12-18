@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState, Fragment } from 'react';
-import Header from './components/Header';
 import Reproductions from './components/Reproductions';
 
 import Slogan from './components/Slogan';
@@ -22,13 +21,12 @@ export default function Home() {
   useEffect(() => {
     //@ts-ignore
     dispatch(fetchReplications());
-        //@ts-ignore
+    //@ts-ignore
     dispatch(fetchBacket());
   }, []);
 
   return (
     <Fragment>
-      <Header  />
       <div className="container">
         <Slogan />
         <Reproductions getBasketItems={getBasketItems} setBasketPosts={setBasketPosts} />

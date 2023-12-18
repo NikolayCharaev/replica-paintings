@@ -31,7 +31,7 @@ const ReproductionsList = ({ posts }: any) => {
       });
       // const newBasketItems = await getBasketItems();
       // setBasketPosts(newBasketItems);
-      dispatch(fetchBacket())
+      dispatch(fetchBacket() as any)
     } catch (err) {
       console.log(err);
     }

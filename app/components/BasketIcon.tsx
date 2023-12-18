@@ -10,14 +10,14 @@ const BasketIcon = () => {
   const { basketItems } = useSelector((state : any) => state.baksetSlice);
   return (
     <Link href="/basket">
-      <div className="basket">
-        <div className="basket__wrapper">
+      <div className="basket__icon">
+        <div className="basket__icon-wrapper">
           <div className="">
             <SlBasket style={{ cursor: 'pointer' }} size={30} />
             {basketItems ? (
-              <span className="basket__counter">{basketItems.length}</span>
+              <span className="basket__icon-counter">{basketItems.length}</span>
             ) : (
-              <span className="basket__counter">{0}</span>
+              <span className="basket__icon-counter">{0}</span>
             )}
           </div>
         </div>
