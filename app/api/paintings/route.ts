@@ -2,20 +2,22 @@ import { connectDB } from '@/lib/database';
 import Repair from '@/models/Repair';
 
 export const POST = async (req: any, res: any) => {
-  const { author, imageUrl, title, size, price, user } = await req.json();
+  const { author, images, paintingName, paintingSize, paintingPrice, user } = await req.json();
 
   try {
     connectDB();
     const post = new Repair({
       author: author,
-      imageUrl: imageUrl,
-      title: title,
-      size: size,
-      price: price,
+      images ,
+      paintingName,
+      paintingSize,
+      paintingPrice,
       user,
     });
 
     await post.save();
+
+    console.log(post);
 
     return new Response(JSON.stringify(post), {
       status: 200,
@@ -26,7 +28,7 @@ export const POST = async (req: any, res: any) => {
   }
 };
 
-export const GET = async (req : any, res : any) => {
+export const GET = async (req: any, res: any) => {
   try {
     const allPosts = await Repair.find({});
 

@@ -5,33 +5,30 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { IPostsProps } from '@/types/postsTypes';
 
 import { useSession } from 'next-auth/react';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { container, item } from '@/animation/repairAnimation';
 import { fetchBacket } from '@/redux/slices/basket/basketSlice';
 
-const ReproductionsList = ({ posts }: any) => {
+const ReproductionsList = ({ posts, basket }: any) => {
   const { data: session } = useSession();
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
   async function postProduction(elem: IPostsProps) {
     try {
       await fetch('/api/paintings', {
         method: 'POST',
         body: JSON.stringify({
           author: elem.author,
-          imageUrl: elem.images,
-          title: elem.paintingName,
-          size: elem.paintingSize,
-          price: elem.paintingPrice,
-
+          images: elem.images,
+          paintingName: elem.paintingName,
+          paintingSize: elem.paintingSize,
+          paintingPrice: elem.paintingPrice,
 
           //@ts-ignore
           user: session?.user?.id,
         }),
       });
-      // const newBasketItems = await getBasketItems();
-      // setBasketPosts(newBasketItems);
-      dispatch(fetchBacket() as any)
+      dispatch(fetchBacket() as any);
     } catch (err) {
       console.log(err);
     }
@@ -39,11 +36,7 @@ const ReproductionsList = ({ posts }: any) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="reproductions__list"
-        variants={container}
-        initial="hidden"
-        animate="visible">
+      <motion.div className="reproductions__list" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         {posts.map((elem: IPostsProps) => {
           const { _id, author, images, paintingName, paintingPrice, paintingSize } = elem;
           return (
@@ -56,13 +49,15 @@ const ReproductionsList = ({ posts }: any) => {
                 {paintingPrice.slice(0, 2) + ' ' + paintingPrice.slice(2)} руб
               </p>
 
-              <Button
-                disabled={!session ? true : false}
-                onClick={() => {
-                  postProduction(elem);
-                }}>
-                В корзину
-              </Button>
+              {!basket && (
+                <Button
+                  disabled={!session ? true : false}
+                  onClick={() => {
+                    postProduction(elem);
+                  }}>
+                  В корзину
+                </Button>
+              )}
             </motion.div>
           );
         })}

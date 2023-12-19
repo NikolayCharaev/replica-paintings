@@ -8,14 +8,12 @@ import News from './components/News';
 import Team from './components/Team';
 import Footer from './components/Footer';
 
-import { getBasketItems } from '@/lib/basket';
 import { fetchReplications } from '@/redux/slices/reproductions/reproductionsSlice';
 import { fetchBacket } from '@/redux/slices/basket/basketSlice';
 
 import { useDispatch } from 'react-redux';
 
 export default function Home() {
-  const [basketPosts, setBasketPosts] = useState<[]>([]);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,7 +27,7 @@ export default function Home() {
     <Fragment>
       <div className="container">
         <Slogan />
-        <Reproductions getBasketItems={getBasketItems} setBasketPosts={setBasketPosts} />
+        <Reproductions />
       </div>
       <News />
       <div className="container">

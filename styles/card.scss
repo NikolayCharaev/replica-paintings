@@ -1,0 +1,15 @@
+.card { 
+
+    padding: 20px 40px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,50%);
+    &__modal { 
+
+        margin-top: 40px;
+
+    }
+}

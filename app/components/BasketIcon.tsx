@@ -6,8 +6,11 @@ import { SlBasket } from 'react-icons/sl';
 import Link from 'next/link';
 
 import { useSelector } from 'react-redux';
+
+
+
 const BasketIcon = () => {
-  const { basketItems } = useSelector((state : any) => state.baksetSlice);
+  const { basketItems } = useSelector((state : any) => state.basketSlice);
   return (
     <Link href="/basket">
       <div className="basket__icon">

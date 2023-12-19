@@ -10,7 +10,7 @@ import { IPostsProps } from '@/types/postsTypes';
 
 import Spinner from './Spinner';
 
-const Reproductions = ({ basketPosts, setBasketPosts }: any) => {
+const Reproductions = () => {
   const [activeButton, setActiveButton] = useState('Франция');
   const [categoryPost, setCategoryPost] = useState([]);
 

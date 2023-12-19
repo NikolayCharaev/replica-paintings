@@ -4,7 +4,7 @@ const RepairSchema = new Schema({
   author: {
     type: String,
   },
-  title: {
+  paintingName: {
     type: String,
   },
   paintingSize: {
@@ -13,7 +13,7 @@ const RepairSchema = new Schema({
   paintingPrice: {
     type: String,
   },
-  imageUrl: {
+  images: {
     type: String,
   },
   user: {

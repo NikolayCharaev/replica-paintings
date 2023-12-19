@@ -8,7 +8,7 @@ export const store = () => {
   return configureStore({
     reducer: {
       reproductionsSlice: reproductionsSlice,
-      baksetSlice: basketSlice,
+      basketSlice: basketSlice,
     },
   });
 };

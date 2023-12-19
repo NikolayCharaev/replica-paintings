@@ -6,4 +6,5 @@ export interface IPostsProps {
   paintingName: string;
   paintingSize: string;
   paintingPrice: string;
+  user: any
 }

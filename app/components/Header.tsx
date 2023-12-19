@@ -26,6 +26,7 @@ const Header = () => {
           <Logo />
           <span className="header__border" />
           <div className="header__left">
+            
             <Nav handleToggleMenu={handleToggleMenu} mobileMenu={mobileMenu} />
             {session && <Basket  />}
 

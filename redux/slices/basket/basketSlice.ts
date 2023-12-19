@@ -34,6 +34,7 @@ export const basketSlice = createSlice({
     builder.addCase(fetchBacket.fulfilled, (state, action: PayloadAction<any>) => {
       state.basketLoading = BasketStatus.Succeeded;
       state.basketItems = action.payload;
+
     });
     builder.addCase(fetchBacket.rejected, (state) => {
       state.basketLoading = BasketStatus.Failed;
