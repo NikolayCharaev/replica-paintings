@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { useSession } from 'next-auth/react';
 
-
-
 const BasketIcon = () => {
   const { data: session } = useSession();
   const { basketItems } = useSelector((state: any) => state.basketSlice);
@@ -19,7 +17,8 @@ const BasketIcon = () => {
             <SlBasket style={{ cursor: 'pointer' }} size={30} />
             {basketItems ? (
               <span className="basket__icon-counter">
-                {basketItems.filter((elem : IPostsProps) => elem.user === session?.user?.id).length}
+                {/*//@ts-ignore */}
+                {basketItems.filter((elem: IPostsProps) => elem.user === session?.user?.id).length}
               </span>
             ) : (
               <span className="basket__icon-counter">{0}</span>

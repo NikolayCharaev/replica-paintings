@@ -4,7 +4,13 @@ import '@/styles/card.scss'
 import Button from './Button';
 import Title from './Title';
 
-const ModalCard = ({ setModalCard,bodyScroll }) => {
+
+interface IModalProps { 
+  setModalCard : ( arg: boolean ) => void,
+  bodyScroll: ( arg: boolean ) => void,
+}
+
+const ModalCard = ({ setModalCard ,bodyScroll } : IModalProps) => {
   return (
     <div className="card">
       <h1>Данные вашей карты</h1>
