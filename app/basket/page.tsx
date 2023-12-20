@@ -33,6 +33,7 @@ const Basket = () => {
   }
 
   useEffect(() => {
+    //@ts-ignore
     const userPosts = basketItems?.filter((elem: IPostsProps) => elem.user === session?.user?.id);
     setUserBasket(userPosts);
 

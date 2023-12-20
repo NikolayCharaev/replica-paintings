@@ -24,7 +24,9 @@ export const options: NextAuthOptions = {
     //   clientSecret: process.env.MAILRU_SECRET,
     // }),
     GitHubProvider({
+      //@ts-ignore
       clientId: process.env.GITHUB_ID,
+      //@ts-ignore
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],

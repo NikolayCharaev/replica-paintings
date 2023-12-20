@@ -1,13 +1,13 @@
 'use client';
-import { IBasketTypes } from '@/types/basketTypes';
-import { useEffect } from 'react';
+import { IPostsProps } from '@/types/postsTypes';
 import '@/styles/basket.scss';
 import { SlBasket } from 'react-icons/sl';
-
 import Link from 'next/link';
-
 import { useSelector } from 'react-redux';
 import { useSession } from 'next-auth/react';
+
+
+
 const BasketIcon = () => {
   const { data: session } = useSession();
   const { basketItems } = useSelector((state: any) => state.basketSlice);
@@ -19,7 +19,7 @@ const BasketIcon = () => {
             <SlBasket style={{ cursor: 'pointer' }} size={30} />
             {basketItems ? (
               <span className="basket__icon-counter">
-                {basketItems.filter((elem) => elem.user === session?.user?.id).length}
+                {basketItems.filter((elem : IPostsProps) => elem.user === session?.user?.id).length}
               </span>
             ) : (
               <span className="basket__icon-counter">{0}</span>
