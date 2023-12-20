@@ -15,14 +15,14 @@ export const options: NextAuthOptions = {
       //@ts-ignore
       clientSecret: process.env.CLIENT_SECRET,
     }),
-    VkProvider({
-      clientId: process.env.VK_ID,
-      clientSecret: process.env.VK_SECRET,
-    }),
-    MailRuProvider({
-      clientId: process.env.MAILRU_ID,
-      clientSecret: process.env.MAILRU_SECRET,
-    }),
+    // VkProvider({
+    //   clientId: process.env.VK_ID,
+    //   clientSecret: process.env.VK_SECRET,
+    // }),
+    // MailRuProvider({
+    //   clientId: process.env.MAILRU_ID,
+    //   clientSecret: process.env.MAILRU_SECRET,
+    // }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
