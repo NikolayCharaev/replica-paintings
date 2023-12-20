@@ -48,6 +48,7 @@ export const options: NextAuthOptions = {
             image: profile.picture,
           });
         }
+        
         return true;
       } catch (err) {
         console.log(err);
