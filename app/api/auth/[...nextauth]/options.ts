@@ -16,12 +16,12 @@ export const options: NextAuthOptions = {
       clientSecret: process.env.CLIENT_SECRET,
     }),
     VkProvider({
-      clientId: process.env.VK_CLIENT_ID,
-      clientSecret: process.env.VK_CLIENT_SECRET,
+      clientId: process.env.VK_ID,
+      clientSecret: process.env.VK_SECRET,
     }),
     MailRuProvider({
-      clientId: process.env.MAILRU_CLIENT_ID,
-      clientSecret: process.env.MAILRU_CLIENT_SECRET,
+      clientId: process.env.MAILRU_ID,
+      clientSecret: process.env.MAILRU_SECRET,
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
