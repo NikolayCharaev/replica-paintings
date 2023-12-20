@@ -23,6 +23,7 @@ const Basket = () => {
   const [userBasket, setUserBasket] = useState<[]>([]);
   const [totalSum, setTotalSum] = useState(0);
   const [modalCard, setModalCart] = useState<boolean>(false);
+  const [basketUpdated, setBasketUpdated] = useState(false);
 
   function bodyScroll(flag: boolean) {
     if (flag) {
@@ -42,7 +43,10 @@ const Basket = () => {
         return a + Number(b.paintingPrice);
       }, 0),
     );
-  }, []);
+
+     setBasketUpdated(false)
+
+  }, [basketUpdated]);
 
   return (
     <div className="basket" style={{ overflow: 'hidden' }}>
@@ -55,6 +59,7 @@ const Basket = () => {
               <ReproductionsList
                 //@ts-ignore
                 posts={userBasket}
+                setBasketUpdated={setBasketUpdated}
                 basket={true}
               />
             </div>

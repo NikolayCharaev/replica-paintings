@@ -3,8 +3,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getBasketItems } from '@/lib/basket';
+import { useSession } from 'next-auth/react';
 
 export const fetchBacket = createAsyncThunk('basket', getBasketItems);
+
 
 enum BasketStatus {
   Idle = 'idle',
