@@ -46,7 +46,7 @@ const ReproductionsList = ({ posts, basket }: any) => {
               <h1 className="title">{paintingName}</h1>
               <p className="size">{paintingSize}</p>
               <p className="price">
-                {paintingPrice.slice(0, 2) + ' ' + paintingPrice.slice(2)} руб
+                {paintingPrice} руб
               </p>
 
               {!basket && (

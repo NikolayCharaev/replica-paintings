@@ -24,12 +24,11 @@ const Basket = () => {
   const [totalSum, setTotalSum] = useState(0);
   const [modalCard, setModalCart] = useState<boolean>(false);
 
-
-  function bodyScroll (flag : boolean) { 
-    if (flag) { 
-      document.body.style.overflow = 'hidden'
-    }else { 
-      document.body.style.overflow = ''
+  function bodyScroll(flag: boolean) {
+    if (flag) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
   }
 
@@ -38,22 +37,19 @@ const Basket = () => {
     setUserBasket(userPosts);
 
     setTotalSum(
-      userPosts.reduce((a, b) => {
+      userPosts.reduce((a: any, b: any) => {
         return a + Number(b.paintingPrice);
       }, 0),
     );
   }, []);
 
-  
-
   return (
-    <div className="basket" style={{overflow: 'hidden'}}>
+    <div className="basket" style={{ overflow: 'hidden' }}>
       <div className="container">
         <div className="basket__wrapper">
           <Title>Корзина</Title>
 
-
-          <div className="basket__wrapper-bottom" >
+          <div className="basket__wrapper-bottom">
             <div className="basket__list">
               <ReproductionsList
                 //@ts-ignore
@@ -68,7 +64,7 @@ const Basket = () => {
               <Button
                 onClick={() => {
                   setModalCart(true);
-                  bodyScroll(true)
+                  bodyScroll(true);
                 }}>
                 Перейти к оформлению
               </Button>
@@ -77,7 +73,7 @@ const Basket = () => {
         </div>
       </div>
 
-      {modalCard && <ModalCard setModalCard={setModalCart} bodyScroll={bodyScroll}/>}
+      {modalCard && <ModalCard setModalCard={setModalCart} bodyScroll={bodyScroll} />}
     </div>
   );
 };
