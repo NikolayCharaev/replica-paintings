@@ -13,11 +13,11 @@ const TeamPhotos = () => {
 
   return (
     <div className="team__photos">
-      {photos.map((elem: any) => {
+      {photos.map((elem: any, index: number) => {
         return (
-          <>
+          <div key={index}>
             <Image src={elem.images} width={80} height={80} alt="photo" />
-          </>
+          </div>
         );
       })}
     </div>
